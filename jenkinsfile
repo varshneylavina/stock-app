@@ -11,21 +11,21 @@ pipeline{
         }
         stage('Clean Stage'){
             steps{
-                dir("StockApp"){
+                dir("stock-app"){
                     bat 'mvn clean'
                 }
             }
         }
                 stage('Compile Stage'){
             steps{
-                dir("StockApp"){
+                dir("stock-app"){
                     bat 'mvn compile'
                 }
             }
         }
                 stage('install Stage'){
             steps{
-                dir("StockApp"){
+                dir("stock-app"){
                     bat 'mvn install'
                 }
             }
