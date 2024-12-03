@@ -6,29 +6,29 @@ pipeline{
     stages{
         stage('Clone git Repo'){
         steps{
-            dir('JenkinsTraining'){
-        bat 'git clone https://github.com/varshneylavina/JenkinsTraining'
+            dir('StockApp'){
+        bat 'git clone https://github.com/varshneylavina/stock-app'
         }
         }
         }
         stage('Clean Stage'){
             steps{
-                dir("JenkinsTraining"){
-                    bat 'C:/Users/ASUS/OneDrive/Desktop/apache-maven-3.9.9/bin/mvn clean'
+                dir("StockApp"){
+                    bat 'mvn clean'
                 }
             }
         }
                 stage('Compile Stage'){
             steps{
-                dir("JenkinsTraining"){
-                    bat 'C:/Users/ASUS/OneDrive/Desktop/apache-maven-3.9.9/bin/mvn compile'
+                dir("StockApp"){
+                    bat 'mvn compile'
                 }
             }
         }
                 stage('install Stage'){
             steps{
-                dir("JenkinsTraining"){
-                    bat 'C:/Users/ASUS/OneDrive/Desktop/apache-maven-3.9.9/bin/mvn install'
+                dir("StockApp"){
+                    bat 'mvn install'
                 }
             }
         }
