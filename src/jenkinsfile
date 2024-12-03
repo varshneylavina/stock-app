@@ -1,0 +1,36 @@
+pipeline{
+    agent any
+    environment {
+        JAVA_HOME='C:/Program Files/Java/jdk-17.0.3.1'
+    }
+    stages{
+        stage('Clone git Repo'){
+        steps{
+            dir('JenkinsTraining'){
+        bat 'git clone https://github.com/varshneylavina/JenkinsTraining'
+        }
+        }
+        }
+        stage('Clean Stage'){
+            steps{
+                dir("JenkinsTraining"){
+                    bat 'C:/Users/ASUS/OneDrive/Desktop/apache-maven-3.9.9/bin/mvn clean'
+                }
+            }
+        }
+                stage('Compile Stage'){
+            steps{
+                dir("JenkinsTraining"){
+                    bat 'C:/Users/ASUS/OneDrive/Desktop/apache-maven-3.9.9/bin/mvn compile'
+                }
+            }
+        }
+                stage('install Stage'){
+            steps{
+                dir("JenkinsTraining"){
+                    bat 'C:/Users/ASUS/OneDrive/Desktop/apache-maven-3.9.9/bin/mvn install'
+                }
+            }
+        }
+    }
+}
