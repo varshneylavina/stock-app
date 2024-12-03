@@ -8,6 +8,7 @@ pipeline{
             steps {
                 checkout scm
             }
+        }
         stage('Clean Stage'){
             steps{
                 dir("StockApp"){
@@ -29,6 +30,5 @@ pipeline{
                 }
             }
         }
-    }
     }
 }
