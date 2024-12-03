@@ -12,21 +12,21 @@ pipeline{
         stage('Clean Stage'){
             steps{
                 dir("StockApp"){
-                    bat 'C:/Users/ASUS/OneDrive/Desktop/apache-maven-3.9.9/bin/mvn clean'
+                    bat 'mvn clean'
                 }
             }
         }
                 stage('Compile Stage'){
             steps{
                 dir("StockApp"){
-                    bat 'C:/Users/ASUS/OneDrive/Desktop/apache-maven-3.9.9/bin/mvn compile'
+                    bat 'mvn compile'
                 }
             }
         }
                 stage('install Stage'){
             steps{
                 dir("StockApp"){
-                    bat 'C:/Users/ASUS/OneDrive/Desktop/apache-maven-3.9.9/bin/mvn install'
+                    bat 'mvn install'
                 }
             }
         }
